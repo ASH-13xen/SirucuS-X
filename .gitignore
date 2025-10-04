@@ -1,0 +1,17 @@
+# Environment Variables (CRUCIAL for security)
+.env
+
+# Dependencies (Common to both folders)
+/node_modules
+
+# Frontend Specific (e.g., React/Vite/Webpack build output)
+/frontend/node_modules
+/frontend/dist
+/frontend/build
+
+# Backend Specific (e.g., compiled code output)
+/backend/node_modules
+/backend/dist
+
+# OS files
+.DS_Store
