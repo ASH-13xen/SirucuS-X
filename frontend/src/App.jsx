@@ -97,28 +97,7 @@ function App() {
       className="min-h-screen bg-gradient-to-br
       bg-black flex items-center justify-center relative "
     >
-      {/* Floating Shapes for the background of auth pages */}
-      <FloatingShape
-        color="bg-black"
-        size="w-64 h-64"
-        top="-5%"
-        left="10%"
-        delay={0}
-      />
-      <FloatingShape
-        color="bg-black"
-        size="w-48 h-48"
-        top="70%"
-        left="80%"
-        delay={5}
-      />
-      <FloatingShape
-        color="bg-black"
-        size="w-32 h-32"
-        top="40%"
-        left="-10%"
-        delay={2}
-      />
+     
 
       <Routes>
         {/* ======================= AUTH ROUTES (Unprotected/Redirected) ======================= */}

@@ -54,7 +54,7 @@ const homestyles = `
 const HomePage = () => {
   return (
     <div
-      style={{ backgroundColor: "#000000ff", height: "100vh", width: "100vw" }}
+      style={{backgroundColor: "#000000ff", height: "100vh", width: "100vw" }}
     >
       {/* <div>
         <Navbar />

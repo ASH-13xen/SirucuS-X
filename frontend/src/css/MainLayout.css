@@ -1,6 +1,4 @@
 .main-layout {
-  display: flex;
-  flex-direction: column;
   width: 100vw; /* Ensures the wrapper takes the full viewport width */
   min-height: 100vh;
 }
@@ -9,5 +7,7 @@
   flex-grow: 1; /* This is important: it makes the content area take up all remaining vertical space */
   padding: 2rem; /* Adds some comfortable spacing around your page content */
   width: 100%;
+  height: 100%;
   box-sizing: border-box; /* Ensures padding is included in the width calculation */
+  
 }
