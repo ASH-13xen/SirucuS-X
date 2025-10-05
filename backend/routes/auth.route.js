@@ -7,33 +7,31 @@ import {
   forgotPassword,
   resetPassword,
   checkAuth,
-  googleCallback, // Import the new controller
+  googleCallback,
 } from "../controllers/auth.controller.js";
-import { verifyToken } from "../middleware/verifyToken.js";
+// 1. IMPORT "protect" INSTEAD OF "verifyToken"
+import { protect } from "../middleware/authMiddleware.js";
 import passport from "passport";
 
 const router = express.Router();
 
 // --- GOOGLE OAUTH ROUTES ---
-
-// This route starts the Google OAuth flow
 router.get(
   "/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-// This is the callback route that Google redirects to
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    failureRedirect: `${process.env.CLIENT_URL}/login`, // Redirect to login on fail
-    session: false, // We are using JWT, not sessions
+    failureRedirect: `${process.env.CLIENT_URL}/login`,
+    session: false,
   }),
   googleCallback
 );
 
-
-router.get("/check-auth", verifyToken, checkAuth);
+// 2. USE "protect" INSTEAD OF "verifyToken"
+router.get("/check-auth", protect, checkAuth);
 
 router.post("/signup", signup);
 

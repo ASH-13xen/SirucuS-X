@@ -7,26 +7,24 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    // Password is no longer required for OAuth users
     password: {
       type: String,
-      required: false, // CHANGED
+      required: false, // Not required for OAuth users
     },
     username: {
       type: String,
       required: true,
     },
-    // Field to store the user's Google ID
     googleId: {
       type: String,
       unique: true,
-      sparse: true, // Allows multiple null values for non-Google users
+      sparse: true,
     },
-    // You might want to store the avatar from Google
     avatar: {
       type: String,
+      default: 'https://placehold.co/150x150/a2d5c6/000000?text=S',
     },
-    lastlogin: { // Note: 'lastLogin' is a more standard casing
+    lastlogin: {
       type: Date,
       default: Date.now,
     },
@@ -38,6 +36,22 @@ const userSchema = new mongoose.Schema(
     resetPasswordExpiresAt: Date,
     verificationToken: String,
     verificationTokenExpiresAt: Date,
+    
+    // --- PROFILE FIELDS ---
+    contactNo: {
+      type: String,
+      default: '',
+    },
+    collegeDetails: {
+      year: { type: String, default: '' },
+      branch: { type: String, default: '' },
+      rollNo: { type: String, default: '' },
+    },
+    individualRatings: {
+      type: Map,
+      of: Number,
+      default: {},
+    },
   },
   { timestamps: true }
 );

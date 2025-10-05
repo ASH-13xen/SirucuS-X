@@ -3,6 +3,7 @@ import { connectDB } from "./db/connectDB.js";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.route.js";
+import userRoutes from "./routes/user.routes.js";
 import cors from "cors";
 import passport from "passport";
 import "./config/passport.js";
@@ -21,7 +22,7 @@ app.use(cookieParser());
 app.use(passport.initialize());
 
 app.use("/api/auth", authRoutes);
-
+app.use("/api/users", userRoutes);
 app.listen(PORT, () => { // Use PORT variable
   connectDB();
   console.log("Server is running on port: ", PORT);

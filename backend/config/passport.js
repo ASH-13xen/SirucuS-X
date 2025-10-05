@@ -8,36 +8,31 @@ passport.use(
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "/api/auth/google/callback",
-      scope: ["profile", "email"], // What info we want from Google
+      scope: ["profile", "email"],
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        // Check if user already exists with this googleId
         let user = await User.findOne({ googleId: profile.id });
+        if (user) return done(null, user);
 
-        if (user) {
-          return done(null, user); // User exists, log them in
-        }
-
-        // If not, check if user exists with this email
         user = await User.findOne({ email: profile.emails[0].value });
-
         if (user) {
-          // User exists with email, but not linked to Google. Link them.
           user.googleId = profile.id;
-          user.avatar = profile.photos[0].value;
-          user.isVerified = true; // Google verifies emails
+          user.avatar = user.avatar || profile.photos[0].value;
+          user.isVerified = true;
           await user.save();
           return done(null, user);
         }
 
-        // If no user exists at all, create a new one
+        // Provide a fallback username if displayName is not available
+        const username = profile.displayName || profile.emails[0].value.split('@')[0];
+
         const newUser = new User({
           googleId: profile.id,
-          username: profile.displayName,
+          username: username, // Use the new robust username
           email: profile.emails[0].value,
           avatar: profile.photos[0].value,
-          isVerified: true, // Google verifies emails automatically
+          isVerified: true,
         });
 
         await newUser.save();
@@ -49,7 +44,6 @@ passport.use(
   )
 );
 
-// These are needed for session management, though we use JWT
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });

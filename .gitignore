@@ -1,6 +1,7 @@
 # Environment Variables (CRUCIAL for security)
 /frontend/.env
 /backend/.env
+.env
 # Dependencies (Common to both folders)
 /node_modules
 
