@@ -1,7 +1,6 @@
 import React from 'react'
 import Htmlcontents from '../../components/Htmlcontents';
 import WebDevbar from '../../components/WebDevbar';
-import Navbar2 from '../../components/Navbar2';
 
 export const Learnhtml = () => {
   return (

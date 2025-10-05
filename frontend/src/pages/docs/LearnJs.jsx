@@ -1,6 +1,5 @@
 import React from 'react'
 import WebDevbar from '../../components/WebDevbar';
-import Navbar2 from '../../components/Navbar2';
 import Jscontent from '../../components/Jscontent';
 const LearnJs = () => {
   return (
