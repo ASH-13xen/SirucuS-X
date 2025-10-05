@@ -95,7 +95,7 @@ function App() {
   return (
     <div
       className="min-h-screen bg-gradient-to-br
-      bg-black flex items-center justify-center relative overflow-hidden"
+      bg-black flex items-center justify-center relative"
     >
       {/* Floating Shapes for the background of auth pages */}
       <FloatingShape
