@@ -7,15 +7,26 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    // Password is no longer required for OAuth users
     password: {
       type: String,
-      required: true,
+      required: false, // CHANGED
     },
     username: {
       type: String,
       required: true,
     },
-    lastlogin: {
+    // Field to store the user's Google ID
+    googleId: {
+      type: String,
+      unique: true,
+      sparse: true, // Allows multiple null values for non-Google users
+    },
+    // You might want to store the avatar from Google
+    avatar: {
+      type: String,
+    },
+    lastlogin: { // Note: 'lastLogin' is a more standard casing
       type: Date,
       default: Date.now,
     },

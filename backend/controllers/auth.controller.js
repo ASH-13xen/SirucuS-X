@@ -8,6 +8,10 @@ import {
   sendPasswordResetEmail,
   sendResetSuccessEmail,
 } from "../mailtrap/emails.js";
+export const googleCallback = (req, res) => {
+  generateTokenAndSetCookie(res, req.user._id);
+  res.redirect(process.env.CLIENT_URL);
+};
 
 export const signup = async (req, res) => {
   const { email, password, username } = req.body;
