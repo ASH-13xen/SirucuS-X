@@ -1,0 +1,87 @@
+.test-page-container {
+  padding: 40px 20px;
+  text-align: center;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-page-title {
+  font-size: 2.5em;
+  color: #34495e;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.current-xp-display {
+  font-size: 1.8em;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+.xp-value-highlight {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.xp-controls-test-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.xp-button {
+  padding: 12px 25px;
+  font-size: 1.1em;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  min-width: 120px;
+}
+
+.xp-button.add-xp {
+  background-color: #2ecc71;
+}
+
+.xp-button.add-xp:hover {
+  background-color: #27ae60;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.xp-button.reset-xp {
+  background-color: #e74c3c;
+}
+
+.xp-button.reset-xp:hover {
+  background-color: #c0392b;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.xp-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navigation-hint {
+  margin-top: 50px;
+  font-size: 1em;
+  color: #7f8c8d;
+  font-style: italic;
+}

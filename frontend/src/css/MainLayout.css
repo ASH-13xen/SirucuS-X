@@ -1,0 +1,13 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000000; /* Sets the black background for all pages using this layout */
+}
+
+.main-content {
+  flex-grow: 1; /* This is important: it makes the content area take up all remaining vertical space */
+  padding: 2rem; /* Adds some comfortable spacing around your page content */
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}

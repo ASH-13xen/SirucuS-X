@@ -1,0 +1,29 @@
+.SplitContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Left side with logo only */
+.SplitLeft {
+  width: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LogoOnly {
+  width: 650px;
+  object-fit: contain;
+}
+
+/* Right side with navbar only */
+.SplitRight {
+  width: 50%;
+  background-color: #aacfc7; /* Slightly darker soft shade */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}

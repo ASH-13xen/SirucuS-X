@@ -1,0 +1,8 @@
+.animal-gif-display {
+  display: block;
+  margin-top: 80px;
+  z-index: -10;
+  width: 640px;
+  height: 360px;
+  object-fit: contain;
+}

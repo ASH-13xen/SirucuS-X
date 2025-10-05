@@ -1,0 +1,24 @@
+.level-display-box {
+  background-color: transparent;
+  border: 3px solid rgb(70, 109, 100);
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  max-width: fit-content;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.level-text {
+  font-size: 1.5em;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: normal;
+}
+
+.level-text strong {
+  color: #e74c3c;
+  font-weight: bold;
+}

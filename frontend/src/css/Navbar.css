@@ -1,0 +1,83 @@
+.NavbarMain {
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  /* This glass effect will look great on the dark pages */
+  background: rgba(30, 30, 30, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 60px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+/* --- KEY CHANGES ARE HERE --- */
+
+/* We are now styling the link (<a> tag) directly */
+/* This makes the whole padded area clickable, not just the text */
+ul li a {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  color: #FFFFFF;
+  /* CHANGED: Text is now white */
+  text-decoration: none;
+  /* Removes underline from Link component */
+  transition: color 0.2s ease;
+  display: block;
+}
+
+ul li a:hover {
+  color: #a2d5c6;
+  /* CHANGED: Use a theme color for the hover effect */
+}
+
+/* Left nav section (actual nav links) */
+.NavbarLeft {
+  display: flex;
+  align-items: center;
+}
+
+/* Right section (user icon/button) */
+.NavbarRight {
+  display: flex;
+  align-items: center;
+}
+
+.userbutton {
+  font-size: 25px;
+  padding: 7px;
+  border-radius: 0px;
+  background: transparent;
+  border: none;
+  /* Remove default browser border from button */
+  cursor: pointer;
+}
+
+/* Ensure the link inside the user button is also white */
+.userbutton a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.userbutton a:hover {
+  opacity: 0.7;
+}
