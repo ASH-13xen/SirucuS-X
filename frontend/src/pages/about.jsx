@@ -3,6 +3,7 @@ import './docs/DocPage.css';
 import '../css/About.css';
 import varshilProfileImage from '../assets/images/varshil.jpg';
 import dauooProfileImage from '../assets/images/dauoo.jpg';
+import ashankProfileImage from '../assets/images/ashank.png';
 
 // --- Custom Hook for Scroll Animations ---
 const useScrollAnimation = () => {
@@ -74,7 +75,7 @@ const About = () => {
           </div>
           {/* Ashank's Card */}
           <div className="team-member-card">
-            <img src="https://placehold.co/150x150/000000/a2d5c6?text=AM" alt="Ashank Mishra" />
+            <img src={ashankProfileImage} alt="Ashank Mishra" />
             <h3>Ashank Mishra</h3>
             <p className="role">Backend & Database Architect</p>
             <p>Building the robust server-side logic and managing the data infrastructure.<br/>B.Tech CSE (2024-2028)<br />IIIT Naya Raipur</p>
